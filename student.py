@@ -17,7 +17,7 @@ class Student(Frame):
                              bg="white")
         self.canvas.grid()
 
-        img = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\NSS1.jpeg")
+        img = Image.open(r"digit_1.jpg")
         img = img.rotate(0)
         self.photoimg = ImageTk.PhotoImage(img)
         f_lbl = Label(self, image = self.photoimg)
@@ -36,7 +36,7 @@ class Student(Frame):
         left_frame = LabelFrame(main_frame, bd = 2, relief = RIDGE, text = 'Student Details', font = ("times new roman", 12, "bold"))
         left_frame.place(x = 10, y = 10, width = 500, height = 570)
 
-        img_left = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\student_management.jpg")
+        img_left = Image.open(r"digit_2.jpg")
 
         self.photoimg_left = ImageTk.PhotoImage(img_left)
 
@@ -156,7 +156,7 @@ class Student(Frame):
         right_frame = LabelFrame(main_frame, bd = 2, relief = RIDGE, text = 'Student Details', font = ("times new roman", 12, "bold"))
         right_frame.place(x = 520, y = 10, width = 400, height = 570)
 
-        img_right = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\right_frame.jpg")
+        img_right = Image.open(r"digit_3.jpg")
         self.photoimg_right = ImageTk.PhotoImage(img_right)
         f_lbl = Label(right_frame, image = self.photoimg_right)
         f_lbl.place(x = 1, y = 0, width = 380, height = 130)
@@ -206,5 +206,4 @@ class Student(Frame):
         self.student_table.column("Year", width = 100)
         self.student_table.column("Photo", width = 100)
         self.student_table.pack(fill = BOTH, expand = 4)
-
 

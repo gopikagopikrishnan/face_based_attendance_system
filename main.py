@@ -16,7 +16,7 @@ class Face_Recognition_System(Frame):
                              bg="white")
         self.canvas.grid()
 
-        img = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\NSS1.jpeg")
+        img = Image.open("digit_1.jpg")
         img = img.resize((1000,1000), Image.ANTIALIAS)
         img = img.rotate(0)
         self.photoimg = ImageTk.PhotoImage(img)
@@ -30,7 +30,7 @@ class Face_Recognition_System(Frame):
         title_lbl.place(x = 0, y = 0, width = 1000, height = 50)
 
         #student button
-        img1 = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\button1.jpg")
+        img1 = Image.open("digit_2.jpg")
         img1 = img1.resize((220,220), Image.ANTIALIAS)
         
         self.photoimg1 = ImageTk.PhotoImage(img1)
@@ -42,7 +42,7 @@ class Face_Recognition_System(Frame):
         b1_1.place(x = 100, y = 300, width = 220, height = 40)
 
         #detectface button
-        img2 = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\button2.jpg")
+        img2 = Image.open("digit_3.jpg")
         img2 = img2.resize((220,220), Image.ANTIALIAS)
         
         self.photoimg2 = ImageTk.PhotoImage(img2)
@@ -54,7 +54,7 @@ class Face_Recognition_System(Frame):
         b2_2.place(x = 600, y = 300, width = 220, height = 40)
 
         #Attendance
-        img3 = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\button4.jpg")
+        img3 = Image.open("digit_4.jpg")
         img3 = img3.resize((220,220), Image.ANTIALIAS)
         
         self.photoimg3 = ImageTk.PhotoImage(img3)
@@ -65,8 +65,10 @@ class Face_Recognition_System(Frame):
         b3_3.place(x = 100, y = 600, width = 220, height = 40)
 
         #exit button
-        img4 = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\button5.jpg")
+        img4 = Image.open("digit_1.jpg")  # Reusing the first image for the exit button
         img4 = img4.resize((220, 220), Image.ANTIALIAS)
+
+        
 
         self.photoimg4 = ImageTk.PhotoImage(img4)
 
