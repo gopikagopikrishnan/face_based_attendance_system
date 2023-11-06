@@ -3,15 +3,17 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 
 
-class Student(Frame):
+class Student():
     def __init__(self, master = None):
-        super().__init__(master)
-        Frame.__init__(self)
+        #super().__init__(master)
+        #Frame.__init__(self)
+        self.master = master
+        self.frame = Frame(self.master)
         self.master.title("Face Recognition System")
-        self.grid()
+        self.frame.grid()
         self.canvas_width = 1000
         self.canvas_height = 1000
-        self.canvas = Canvas(self, 
+        self.canvas = Canvas(self.frame, 
                              width=self.canvas_width, 
                              height=self.canvas_height, 
                              bg="white")
@@ -20,10 +22,10 @@ class Student(Frame):
         img = Image.open(r"digit_1.jpg")
         img = img.rotate(0)
         self.photoimg = ImageTk.PhotoImage(img)
-        f_lbl = Label(self, image = self.photoimg)
+        f_lbl = Label(self.frame, image = self.photoimg)
         f_lbl.place(x = 0, y = 0, width = 1000, height = 1000)
         
-        bg_img = Label(self, image = self.photoimg)
+        bg_img = Label(self.frame, image = self.photoimg)
         bg_img.place(x = 0, y = 0, width = 1000, height = 1000)
 
         title_lbl = Label(bg_img, text = "Student Management System", font = ("times new roman", 35, "bold"), bg = "white", fg = "black")

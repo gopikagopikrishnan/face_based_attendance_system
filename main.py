@@ -3,27 +3,29 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from student import Student
 
-class Face_Recognition_System(Frame):
-    def __init__(self):
-        Frame.__init__(self)
+class Face_Recognition_System():
+    def __init__(self,master):
+        #Frame.__init__(self)
+        self.master = master
+        self.frame= Frame(self.master)
         self.master.title("Face Recognition System")
-        self.grid()
+        self.frame.grid()
         self.canvas_width = 1000
         self.canvas_height = 1000
-        self.canvas = Canvas(self, 
-                             width=self.canvas_width, 
-                             height=self.canvas_height, 
-                             bg="white")
+        self.canvas = Canvas(self.frame, 
+                     width=self.canvas_width, 
+                     height=self.canvas_height, 
+                     bg="white")
         self.canvas.grid()
 
         img = Image.open("digit_1.jpg")
         img = img.resize((1000,1000), Image.ANTIALIAS)
         img = img.rotate(0)
         self.photoimg = ImageTk.PhotoImage(img)
-        f_lbl = Label(self, image = self.photoimg)
+        f_lbl = Label(self.frame, image = self.photoimg)
         f_lbl.place(x = 0, y = 0, width = 1000, height = 1000)
         
-        bg_img = Label(self, image = self.photoimg)
+        bg_img = Label(self.frame, image = self.photoimg)
         bg_img.place(x = 0, y = 0, width = 1000, height = 1000)
 
         title_lbl = Label(bg_img, text = "Face Recognition Attendance System Software", font = ("Calibri", 35, "bold"), bg = "white", fg = "black")
@@ -79,9 +81,12 @@ class Face_Recognition_System(Frame):
         b4_4.place(x = 600, y = 600, width = 220, height = 40)
 
     def student_details(self):
-        self.new_window = Toplevel(self)
+        self.new_window = Toplevel(self.master)
         self.app = Student(self.new_window)
+        
 
 def main():
-    Face_Recognition_System().mainloop()
+    root=Tk()
+    app = Face_Recognition_System(root)
+    root.mainloop()
 main()
