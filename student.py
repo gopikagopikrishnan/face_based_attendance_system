@@ -3,12 +3,12 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from tkinter import messagebox
 
-
-class Student(Frame):
+class Student():
     def __init__(self, master = None):
-        super().__init__(master)
-        
+        super().__init__()
+        self.master=master
         self.master.title("Face Recognition System")
+        self.frame = Frame(self.master) 
         self.frame.grid()
         self.canvas_width = 1000
         self.canvas_height = 1000
@@ -29,7 +29,7 @@ class Student(Frame):
         self.var_rollno = StringVar()
         self.var_mailID = StringVar()
 
-        img = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\NSS1.jpeg")
+        img = Image.open(r"digit_1.jpg")
         img = img.rotate(0)
         self.photoimg = ImageTk.PhotoImage(img)
         f_lbl = Label(self.frame, image = self.photoimg)
@@ -222,11 +222,11 @@ class Student(Frame):
     def add_data(self):
         if self.var_dep.get() == "Select Department" or self.var_studentname.get() == "" or self.var_studentID.get() == "":
             print("Condition not met")
-            messagebox.showerror("Error","All Fields are required!!!", parent = self)
+            messagebox.showerror("Error","All Fields are required!!!", parent = self.master)
 
         else: 
             print("Condition met")
-            messagebox.showinfo("Success", "Welcome", parent = self)
+            messagebox.showinfo("Success", "Welcome", parent = self.master)
 
             
 
