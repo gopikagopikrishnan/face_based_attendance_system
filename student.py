@@ -3,15 +3,16 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from tkinter import messagebox
 
-class Student(Frame):
+class Student():
     def __init__(self, master = None):
-        super().__init__(master)
-        
+        super().__init__()
+        self.master=master
         self.master.title("Face Recognition System")
-        self.grid()
+        self.frame = Frame(self.master) 
+        self.frame.grid()
         self.canvas_width = 1000
         self.canvas_height = 1000
-        self.canvas = Canvas(self, 
+        self.canvas = Canvas(self.frame, 
                              width=self.canvas_width, 
                              height=self.canvas_height, 
                              bg="white")
@@ -28,13 +29,13 @@ class Student(Frame):
         self.var_rollno = StringVar()
         self.var_mailID = StringVar()
 
-        img = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\NSS1.jpeg")
+        img = Image.open(r"digit_1.jpg")
         img = img.rotate(0)
         self.photoimg = ImageTk.PhotoImage(img)
-        f_lbl = Label(self, image = self.photoimg)
+        f_lbl = Label(self.frame, image = self.photoimg)
         f_lbl.place(x = 0, y = 0, width = 1000, height = 1000)
         
-        bg_img = Label(self, image = self.photoimg)
+        bg_img = Label(self.frame, image = self.photoimg)
         bg_img.place(x = 0, y = 0, width = 1000, height = 1000)
 
         title_lbl = Label(bg_img, text = "Student Management System", font = ("times new roman", 35, "bold"), bg = "white", fg = "black")
@@ -47,7 +48,7 @@ class Student(Frame):
         left_frame = LabelFrame(main_frame, bd = 2, relief = RIDGE, text = 'Student Details', font = ("times new roman", 12, "bold"))
         left_frame.place(x = 10, y = 10, width = 500, height = 570)
 
-        img_left = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\student_management.jpg")
+        img_left = Image.open(r"digit_2.jpg")
 
         self.photoimg_left = ImageTk.PhotoImage(img_left)
 
@@ -167,7 +168,7 @@ class Student(Frame):
         right_frame = LabelFrame(main_frame, bd = 2, relief = RIDGE, text = 'Student Details', font = ("times new roman", 12, "bold"))
         right_frame.place(x = 520, y = 10, width = 400, height = 570)
 
-        img_right = Image.open(r"C:\Users\Gopika\MEENU\MINIPROJECT CSD481\right_frame.jpg")
+        img_right = Image.open(r"digit_3.jpg")
         self.photoimg_right = ImageTk.PhotoImage(img_right)
         f_lbl = Label(right_frame, image = self.photoimg_right)
         f_lbl.place(x = 1, y = 0, width = 380, height = 130)
@@ -221,11 +222,11 @@ class Student(Frame):
     def add_data(self):
         if self.var_dep.get() == "Select Department" or self.var_studentname.get() == "" or self.var_studentID.get() == "":
             print("Condition not met")
-            messagebox.showerror("Error","All Fields are required!!!", parent = self)
+            messagebox.showerror("Error","All Fields are required!!!", parent = self.master)
 
         else: 
             print("Condition met")
-            messagebox.showinfo("Success", "Welcome", parent = self)
+            messagebox.showinfo("Success", "Welcome", parent = self.master)
 
             
 
