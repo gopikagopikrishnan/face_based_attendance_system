@@ -19,7 +19,7 @@ class Face_Recognition_System():
         self.canvas.grid()
 
         img = Image.open("digit_1.jpg")
-        img = img.resize((1000,1000), Image.ANTIALIAS)
+        img = img.resize((1000,1000), Image.BICUBIC)  # Corrected here
         img = img.rotate(0)
         self.photoimg = ImageTk.PhotoImage(img)
         f_lbl = Label(self.frame, image = self.photoimg)
@@ -33,7 +33,7 @@ class Face_Recognition_System():
 
         #student button
         img1 = Image.open("digit_2.jpg")
-        img1 = img1.resize((220,220), Image.ANTIALIAS)
+        img1 = img1.resize((220,220), Image.BICUBIC)  # Corrected here
         
         self.photoimg1 = ImageTk.PhotoImage(img1)
 
@@ -45,7 +45,7 @@ class Face_Recognition_System():
 
         #detectface button
         img2 = Image.open("digit_3.jpg")
-        img2 = img2.resize((220,220), Image.ANTIALIAS)
+        img2 = img2.resize((220,220), Image.BICUBIC)  # Corrected here
         
         self.photoimg2 = ImageTk.PhotoImage(img2)
 
@@ -57,7 +57,7 @@ class Face_Recognition_System():
 
         #Attendance
         img3 = Image.open("digit_4.jpg")
-        img3 = img3.resize((220,220), Image.ANTIALIAS)
+        img3 = img3.resize((220,220), Image.BICUBIC)  # Corrected here
         
         self.photoimg3 = ImageTk.PhotoImage(img3)
 
@@ -68,9 +68,7 @@ class Face_Recognition_System():
 
         #exit button
         img4 = Image.open("digit_1.jpg")  # Reusing the first image for the exit button
-        img4 = img4.resize((220, 220), Image.ANTIALIAS)
-
-        
+        img4 = img4.resize((220, 220), Image.BICUBIC)  # Corrected here
 
         self.photoimg4 = ImageTk.PhotoImage(img4)
 

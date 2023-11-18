@@ -1,0 +1,5 @@
+--2023-11-18 00:29:18--  https://update.code.visualstudio.com/commit:54b8f6a80aaad7489b75e9293b8d7a1700bed815/server-linux-x64/insider
+Resolving update.code.visualstudio.com (update.code.visualstudio.com)... 13.107.213.48, 13.107.246.48, 2620:1ec:bdf::48, ...
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|13.107.213.48|:443... connected.
+OpenSSL: error:0A000126:SSL routines::unexpected eof while reading
+Unable to establish SSL connection.
